@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
@@ -14,6 +18,12 @@ h2 {
     text-align: center;
     margin-bottom: 30px;
     text-transform: uppercase;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
 header {
@@ -22,18 +32,19 @@ header {
     width: 100%;
     z-index: 99;
     background-color: white;
-    padding: 20px 40px;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 12px #e5e5e5;
+    box-shadow: 0px 4px 12px #a49f9f;
+    flex-wrap: wrap;
 }
 
 #logo a {
     color: royalblue;
     text-decoration: none;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.5rem;
     text-transform: uppercase;
 }
 
@@ -44,7 +55,7 @@ header {
 ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 1.5rem;
 }
 
 ul li a {
@@ -52,15 +63,24 @@ ul li a {
     color: #333;
     text-transform: uppercase;
     font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: royalblue;
 }
 
 .flex-btns {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
 }
 
 .flex-btns button {
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .flex-btns .btn-1 {
@@ -70,6 +90,10 @@ ul li a {
     border-radius: 4px;
 }
 
+.flex-btns .btn-1:hover {
+    background-color: #e6e600;
+}
+
 .flex-btns .btn-2 {
     background-color: crimson;
     color: white;
@@ -77,32 +101,83 @@ ul li a {
     border-radius: 4px;
 }
 
+.flex-btns .btn-2:hover {
+    background-color: #b80f2d;
+}
+
 #hero {
-    background: url('hero-bg.webp') no-repeat center/cover;
+    background: url("http://placehold.co/900x1200") no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 0 1.25rem;
+    margin-top: 4.5rem;
+    /* To account for fixed header */
 }
 
 .flex-hero-content {
-    background: #000;
+    background: rgba(0, 0, 0, 0.532);
     color: white;
-    padding: 20px;
+    padding: 2rem;
     border-radius: 8px;
     border: transparent;
     text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.flex-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.flex-hero-content p {
+    font-size: 1.2rem;
 }
 
 #about {
-    height: 100vh;
-    padding: 100px 30px;
+    min-height: 100vh;
+    padding: 6.25rem 1.875rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.about-info p {
+    margin-bottom: 1.25rem;
+    color: #1f2b35;
+    font-size: 1.1rem;
+}
+
+.about-info strong {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.resume-btn button {
+    padding: 0.625rem 1rem;
+    border: 1px solid crimson;
+    border-radius: 4px;
+    background: crimson;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.resume-btn button:hover {
+    box-shadow: 0px 5px 15px #e76e86;
+    transform: translateY(-2px);
+}
+
 .profile-img img {
     border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .flex-about-container {
@@ -110,38 +185,205 @@ ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
     text-align: center;
 }
 
 .resume-btn {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 1.25rem 0;
 }
 
 #services {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 6.25rem 1.25rem;
 }
 
 .services-flex-container {
     display: flex;
-    gap: 30px;
+    gap: 1.875rem;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    margin: 0 20px;
+    margin: 0 1.25rem;
 }
 
 .service {
-    /* flex - grow shrink basis */
     flex: 1 1 300px;
-    min-width: 300px;
+    min-width: 280px;
+    max-width: 350px;
     background: white;
     border-radius: 8px;
     box-shadow: 0px 4px 14px #e9e9e9;
-    padding: 20px;
+    padding: 1.25rem;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service p {
+    margin-top: 0.625rem;
+}
+
+#contact {
+    min-height: 100vh;
+    padding: 6.25rem 1.25rem;
+}
+
+.contact-flex {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 100%;
+    padding: 0 1.25rem;
+}
+
+form input,
+textarea {
+    width: 100%;
+    padding: 0.5rem 1.125rem;
+    border: 1px solid #ddd;
+    outline: 0;
+    margin: 0.625rem 0;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border: 2px solid #5d80e8;
+    box-shadow: 0px 2px 6px #4169e18f;
+}
+
+textarea:focus {
+    border: 2px solid #5d80e8;
+    box-shadow: 0px 2px 6px #4169e183;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-submit-btn button {
+    width: 100%;
+    background-color: royalblue;
+    color: white;
+    border: 1px solid royalblue;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 0.625rem;
+}
+
+.form-submit-btn button:hover {
+    background-color: #1a4af0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(65, 105, 225, 0.4);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+
+    .services-flex-container {
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    #nav-links {
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .flex-btns {
+        margin-top: 1rem;
+    }
+
+    .flex-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .flex-hero-content p {
+        font-size: 1rem;
+    }
+
+    #about,
+    #services,
+    #contact {
+        padding: 5rem 1rem;
+    }
+
+    .service {
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: 13px;
+    }
+
+    .profile-img img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .flex-hero-content {
+        padding: 1.5rem;
+    }
+
+    .flex-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .flex-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .flex-btns button {
+        width: 100%;
+    }
+
+    .service {
+        min-width: 100%;
+    }
 }
